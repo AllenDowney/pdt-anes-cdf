@@ -1,0 +1,112 @@
+{
+ "pdt_version": "0.1.0",
+ "inputs_sha256": "4306613d6c4b79bf3756dfc8e932c0f4a0cec5493c02d3f39b67b62d51f33b28",
+ "dataset": "anes-cdf",
+ "max_tokens": 20000,
+ "shards": [
+  {
+   "kind": "table",
+   "title": "Release 20260205",
+   "basis": "every variable in the release",
+   "completeness": "complete",
+   "filter": {
+    "release": "20260205"
+   },
+   "releases": [
+    "20260205"
+   ],
+   "n_in_scope": 37,
+   "rule_versions": {},
+   "notes": [],
+   "count": 37,
+   "files": [
+    {
+     "path": "shards/table/20260205.part1.jsonl",
+     "form": "jsonl",
+     "variables": 26,
+     "tokens": 19079
+    },
+    {
+     "path": "shards/table/20260205.part2.jsonl",
+     "form": "jsonl",
+     "variables": 11,
+     "tokens": 9752
+    },
+    {
+     "path": "shards/table/20260205.txt",
+     "form": "txt",
+     "variables": 37,
+     "tokens": 1911
+    }
+   ]
+  },
+  {
+   "kind": "scale",
+   "title": "Scale signature: favor_oppose",
+   "basis": "variables with this scale signature",
+   "completeness": "complete_by_rule",
+   "filter": {
+    "derived": {
+     "scale_signature": "favor_oppose"
+    }
+   },
+   "releases": [
+    "20260205"
+   ],
+   "n_in_scope": 37,
+   "rule_versions": {
+    "scale_signature_from_valid_labels": "0.1"
+   },
+   "notes": [],
+   "count": 1,
+   "files": [
+    {
+     "path": "shards/scale/favor-oppose.jsonl",
+     "form": "jsonl",
+     "variables": 1,
+     "tokens": 770
+    },
+    {
+     "path": "shards/scale/favor-oppose.txt",
+     "form": "txt",
+     "variables": 1,
+     "tokens": 171
+    }
+   ]
+  },
+  {
+   "kind": "scale",
+   "title": "Scale signature: thermometer",
+   "basis": "variables with this scale signature",
+   "completeness": "complete_by_rule",
+   "filter": {
+    "derived": {
+     "scale_signature": "thermometer"
+    }
+   },
+   "releases": [
+    "20260205"
+   ],
+   "n_in_scope": 37,
+   "rule_versions": {
+    "scale_signature_from_valid_labels": "0.1"
+   },
+   "notes": [],
+   "count": 10,
+   "files": [
+    {
+     "path": "shards/scale/thermometer.jsonl",
+     "form": "jsonl",
+     "variables": 10,
+     "tokens": 7082
+    },
+    {
+     "path": "shards/scale/thermometer.txt",
+     "form": "txt",
+     "variables": 10,
+     "tokens": 417
+    }
+   ]
+  }
+ ]
+}
