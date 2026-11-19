@@ -64,3 +64,35 @@ sources:
       b5c986b2705ab5969898bfd97e371bd89e848c2d3eed83a2afbc3fea67670847, faq
       10d86bd04f5c6e3e485c16c3b6bb7772149d79cc071b5c353711f93bd77c62ee,
       access-policy becfda8dc498d964156e7f1f8ffd5433ad6b122dfefe3e2ac33e592774d66305.
+  - id: anes-cdf-errata
+    title: Time Series Cumulative Data File, Updates & Errata (saved from a browser)
+    kind: errata
+    format: html
+    path: data/raw/errata/anes-cdf-errata.html
+    releases: ["20260205"]
+    redistribution: unknown
+    acquisition: manual
+    manual_steps: >
+      Save https://electionstudies.org/time-series-cumulative-data-file-updates-errata/
+      from a browser (the site blocks scripts) as data/raw/errata/anes-cdf-errata.html.
+    fetched_on: "2026-11-19"
+    sha256: 134a814c82d1e72522a4380e534c6a817941516c34ccb67d027eeab24760876d
+    bytes: 238026
+    note: >
+      Checked for PublicDataToolkit Task 20. None of our corrections is listed.
+      The VCF0212 fix is already in release 20260205. The 2026-03-13 erratum on
+      VCF9096 (wrong input variable for 2024) applies to 20260205; it's a data
+      error, outside the slice.
+  - id: anes-updates
+    title: ANES Updates & Announcements (saved from a browser)
+    kind: release_notes
+    format: html
+    path: data/raw/errata/anes-updates.html
+    redistribution: unknown
+    acquisition: manual
+    manual_steps: >
+      Save https://electionstudies.org/updates-announcements/ from a browser
+      as data/raw/errata/anes-updates.html.
+    fetched_on: "2026-11-19"
+    sha256: 1b892867597d2bab9ef13d9d6ca13887e72cc7a093dd6491e2ce269028d93a6a
+    bytes: 258214
