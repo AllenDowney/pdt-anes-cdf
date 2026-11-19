@@ -2,7 +2,19 @@ PYTHON ?= python
 # A PublicDataToolkit checkout. Or `pip install -e $(PDT)` and run `pdt check`.
 PDT ?= ../PublicDataToolkit
 
-.PHONY: build views check
+.PHONY: download data package build views check
+
+## Check the files in data/raw against sources.yaml (ANES's site blocks scripts: every file is fetched by hand)
+download:
+	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/download.py --check
+
+## Write the common-format parquet files in data/processed
+data:
+	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/build_data.py
+
+## Assemble the data release in data/release (ship data only; publish it by hand)
+package:
+	PYTHONPATH=$(PDT)/lib $(PYTHON) -m pdt package .
 
 ## Build metadata records from data/raw (see build/build_slice.py)
 build:
