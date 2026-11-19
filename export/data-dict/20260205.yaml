@@ -19,6 +19,8 @@ details: |
 origin: ../../build
 tables:
 - name: anes-cdf
+  source:
+    parquet: ../../data/processed/anes-cdf-20260205.parquet
   columns:
   - name: _row
     label: Row number
