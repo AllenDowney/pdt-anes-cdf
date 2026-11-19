@@ -1,0 +1,23 @@
+{
+ "pdt_version": "0.1.0",
+ "inputs_sha256": "4c1102704a50fc57004031adadc730b90f4077eb86601237135ed21e6ad184e0",
+ "dataset": "anes-cdf",
+ "spec": "0.1.0",
+ "files": [
+  "20260205.yaml",
+  "LOSSES.md"
+ ],
+ "losses": {
+  "20260205": {
+   "release_version": 1,
+   "variables": 37,
+   "provenance_fields": 219,
+   "availability": 650,
+   "numeric_code_labels": 34,
+   "missing_codes": 89,
+   "corrections": 11,
+   "wordings": 7,
+   "derived": 11
+  }
+ }
+}
