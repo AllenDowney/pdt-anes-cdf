@@ -19,7 +19,9 @@ Dimensions: `wave` is the study year; `phase` is the pre- or post-election; `mod
 
 ## How the shards are organized
 
-Every shard is the result of a filter over the records, and its header says which filter and what completeness label it supports. Each shard comes in two forms with the same variables: `.txt`, one line per variable, for scanning; and `.jsonl`, the full records with corrections applied, for details. The first JSONL line is the shard's header (`{"shard": ...}`); every later line is a variable. A shard too big to read at once (about 20,000 tokens) is split into parts.
+Every shard is the result of a filter over the records, and its header says which filter and what completeness label it supports. Each shard comes in two forms with the same variables: `.txt`, one line per variable, for scanning; and `.jsonl`, the records with corrections applied, for details. The first JSONL line is the shard's header (`{"shard": ...}`); every later line is a variable. A shard too big to read at once (about 20,000 tokens) is split into parts.
+
+The JSONL records are compact: `availability` maps each form (or `all`) to runs of waves, `origins` gives where each field came from as `kind:source` or `rule:name@version`, and `origins.codes` is the origin the codes share (a code lists its own when they differ). Per-wave counts and the notes on origins are left out. The full records in `metadata/` are canonical; each shard header's `full_records` names the files.
 
 Line form: `name | waves; forms | scale signature | label | question text`. A run like `1972-1978` means every wave of the release in that span; a gap between runs (`1972-1985,1987-2024`) means the variable wasn't available in the waves between, even though the release has them. The release's waves are: `20260205`: 1948,1952,1956,1958,1960,1962,1964,1966,1968,1970,1972,1974,1976,1978,1980,1982,1984,1986,1988,1990,1992,1994,1996,1998,2000,2002,2004,2008,2012,2016,2020,2024. `forms A,C` lists every form the variable was on in any wave; the JSONL `availability` gives wave by form. A trailing `*` on a name means a field was corrected.
 
@@ -29,11 +31,11 @@ Read `SKILL.md` before answering a question from these files.
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [Release 20260205](shards/table/20260205.txt) | 37 | `complete` | 1,914 / 28,831 (1 / 2 parts) | every variable in the release |
+| [Release 20260205](shards/table/20260205.txt) | 37 | `complete` | 1,920 / 16,905 | every variable in the release |
 
 ## By scale signature
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [Scale signature: favor_oppose](shards/scale/favor-oppose.txt) | 1 | `complete_by_rule` | 174 / 770 | variables with this scale signature |
-| [Scale signature: thermometer](shards/scale/thermometer.txt) | 10 | `complete_by_rule` | 420 / 7,082 | variables with this scale signature |
+| [Scale signature: favor_oppose](shards/scale/favor-oppose.txt) | 1 | `complete_by_rule` | 180 / 546 | variables with this scale signature |
+| [Scale signature: thermometer](shards/scale/thermometer.txt) | 10 | `complete_by_rule` | 425 / 3,611 | variables with this scale signature |

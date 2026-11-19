@@ -8,6 +8,9 @@
    "kind": "table",
    "title": "Release 20260205",
    "basis": "every variable in the release",
+   "full_records": [
+    "metadata/releases/20260205/variables.jsonl"
+   ],
    "completeness": "complete",
    "filter": {
     "release": "20260205"
@@ -21,22 +24,16 @@
    "count": 37,
    "files": [
     {
-     "path": "shards/table/20260205.part1.jsonl",
+     "path": "shards/table/20260205.jsonl",
      "form": "jsonl",
-     "variables": 26,
-     "tokens": 19079
-    },
-    {
-     "path": "shards/table/20260205.part2.jsonl",
-     "form": "jsonl",
-     "variables": 11,
-     "tokens": 9752
+     "variables": 37,
+     "tokens": 16905
     },
     {
      "path": "shards/table/20260205.txt",
      "form": "txt",
      "variables": 37,
-     "tokens": 1914
+     "tokens": 1920
     }
    ]
   },
@@ -44,6 +41,9 @@
    "kind": "scale",
    "title": "Scale signature: favor_oppose",
    "basis": "variables with this scale signature",
+   "full_records": [
+    "metadata/releases/20260205/variables.jsonl"
+   ],
    "completeness": "complete_by_rule",
    "filter": {
     "derived": {
@@ -64,13 +64,13 @@
      "path": "shards/scale/favor-oppose.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 770
+     "tokens": 546
     },
     {
      "path": "shards/scale/favor-oppose.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 174
+     "tokens": 180
     }
    ]
   },
@@ -78,6 +78,9 @@
    "kind": "scale",
    "title": "Scale signature: thermometer",
    "basis": "variables with this scale signature",
+   "full_records": [
+    "metadata/releases/20260205/variables.jsonl"
+   ],
    "completeness": "complete_by_rule",
    "filter": {
     "derived": {
@@ -98,13 +101,13 @@
      "path": "shards/scale/thermometer.jsonl",
      "form": "jsonl",
      "variables": 10,
-     "tokens": 7082
+     "tokens": 3611
     },
     {
      "path": "shards/scale/thermometer.txt",
      "form": "txt",
      "variables": 10,
-     "tokens": 420
+     "tokens": 425
     }
    ]
   }

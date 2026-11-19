@@ -36,7 +36,8 @@ A `complete` result is complete with respect to the records in scope: if the rep
 part of a release, say so, using the scope in the shard header. Subject shards are complete
 with respect to the publisher's own subject list, which may miss items a reader would
 consider on-topic; say so when it matters. If a subject shard and a group shard give the
-same variables, prefer the one with the better label and cite it.
+same variables, report the stronger label (`complete`, then `complete_by_rule`, then
+`approximate`) and cite that shard.
 
 ## Searching with code
 
