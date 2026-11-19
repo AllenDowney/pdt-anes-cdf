@@ -1,6 +1,6 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "a71091f3d38e0a4ddd5f6f0169967068c1e3c803c11590ecdf9faea85963dccf",
+ "inputs_sha256": "ee5d761d2135049ab592ce64992c18ceee250d60a997adac74c095ad7375fc83",
  "dataset": "anes-cdf",
  "max_tokens": 20000,
  "shards": [
@@ -27,13 +27,13 @@
      "path": "shards/table/20260205.jsonl",
      "form": "jsonl",
      "variables": 37,
-     "tokens": 18631
+     "tokens": 18643
     },
     {
      "path": "shards/table/20260205.txt",
      "form": "txt",
      "variables": 37,
-     "tokens": 2016
+     "tokens": 2024
     }
    ]
   },

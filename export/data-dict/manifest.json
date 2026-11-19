@@ -1,6 +1,6 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "a71091f3d38e0a4ddd5f6f0169967068c1e3c803c11590ecdf9faea85963dccf",
+ "inputs_sha256": "ee5d761d2135049ab592ce64992c18ceee250d60a997adac74c095ad7375fc83",
  "dataset": "anes-cdf",
  "spec": "0.1.0",
  "files": [
@@ -11,8 +11,8 @@
   "20260205": {
    "release_version": 1,
    "variables": 37,
-   "provenance_fields": 219,
-   "availability": 651,
+   "provenance_fields": 220,
+   "availability": 668,
    "corrections": 12,
    "numeric_code_labels": 34,
    "missing_codes": 89,
