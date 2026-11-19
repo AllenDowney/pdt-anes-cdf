@@ -28,3 +28,14 @@ measure:
   categorical: [VCF0104, VCF0837, VCF0838, VCF0876, VCF0876a, VCF0877,
                 VCF0877a, VCF0878, VCF9236, VCF9237, VCF0702, VCF0704, VCF0704a,
                 VCF0713, VCF0128, VCF0846, VCF0850]
+
+# Waves the codebook's Sources list doesn't name but the data has, added by hand
+# (origin: hand) with the reason. Found by pdt check's C5 (PublicDataToolkit Task 17).
+availability_added:
+  VCF0009z:
+    waves: [1948, 1952, 1954, 1956, 1962, 1964, 1966, 1968, 1970, 1972, 1978, 1980,
+            1982, 1984, 1986, 1988, 1990]
+    note: >
+      The codebook's Sources list names the 16 years with a study weight. In these
+      17 other years every respondent has the value 1.0 (checked in the
+      2026-02-05 Stata file), so the weight is defined there and is uniform.

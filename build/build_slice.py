@@ -289,6 +289,9 @@ def build_variable(name, spec, measure, sections, var_labels, frame):
 
     years = sorted({int(y) for y in re.findall(r"\b((?:19|20)\d{2}):", sections.get("sources", ""))})
     phase = PHASE.search(sections.get("notes", ""))
+    added = (spec.get("availability_added") or {}).get(name)
+    if added:  # hand-added waves (build/slice.yaml)
+        years = sorted(set(years) | set(added["waves"]))
     if years:
         record["availability"] = [{"wave": y, **({"phase": phase.group(1).lower()} if phase else {})} for y in years]
     if sections.get("notes"):
@@ -314,6 +317,10 @@ def build_variable(name, spec, measure, sections, var_labels, frame):
         fields["availability"] = {"origin": "rule", "rule": "anes_phase", "rule_version": RULE_VERSION,
                                   "source": CODEBOOK,
                                   "note": "Years from the Sources section; phase from 'This is a pre/post var' in the notes."}
+    if added:
+        fields["availability"] = {**hand, "note": "Years from the codebook's Sources section, plus "
+                                                 f"{', '.join(map(str, added['waves']))} by hand: "
+                                                 + " ".join(added["note"].split())}
     record["provenance"] = {"record": {"origin": "publisher", "source": CODEBOOK}, "fields": fields}
     return record, report
 
