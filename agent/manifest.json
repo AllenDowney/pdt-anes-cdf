@@ -36,7 +36,7 @@
      "path": "shards/table/20260205.txt",
      "form": "txt",
      "variables": 37,
-     "tokens": 1911
+     "tokens": 1914
     }
    ]
   },
@@ -70,7 +70,7 @@
      "path": "shards/scale/favor-oppose.txt",
      "form": "txt",
      "variables": 1,
-     "tokens": 171
+     "tokens": 174
     }
    ]
   },
@@ -104,7 +104,7 @@
      "path": "shards/scale/thermometer.txt",
      "form": "txt",
      "variables": 10,
-     "tokens": 417
+     "tokens": 420
     }
    ]
   }

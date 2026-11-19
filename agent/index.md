@@ -29,11 +29,11 @@ Read `SKILL.md` before answering a question from these files.
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [Release 20260205](shards/table/20260205.txt) | 37 | `complete` | 1,911 / 28,831 (1 / 2 parts) | every variable in the release |
+| [Release 20260205](shards/table/20260205.txt) | 37 | `complete` | 1,914 / 28,831 (1 / 2 parts) | every variable in the release |
 
 ## By scale signature
 
 | Shard | Variables | Completeness | Tokens (txt / jsonl) | Basis |
 |---|---|---|---|---|
-| [Scale signature: favor_oppose](shards/scale/favor-oppose.txt) | 1 | `complete_by_rule` | 171 / 770 | variables with this scale signature |
-| [Scale signature: thermometer](shards/scale/thermometer.txt) | 10 | `complete_by_rule` | 417 / 7,082 | variables with this scale signature |
+| [Scale signature: favor_oppose](shards/scale/favor-oppose.txt) | 1 | `complete_by_rule` | 174 / 770 | variables with this scale signature |
+| [Scale signature: thermometer](shards/scale/thermometer.txt) | 10 | `complete_by_rule` | 420 / 7,082 | variables with this scale signature |
