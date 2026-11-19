@@ -1,6 +1,7 @@
 standard_version: "0.1"
 id: anes-cdf
 title: ANES Time Series Cumulative Data File
+kind: survey   # STANDARD.md §2.1: survey, administrative or portal
 publisher:
   name: American National Election Studies
   url: https://electionstudies.org/
