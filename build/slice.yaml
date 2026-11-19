@@ -5,11 +5,11 @@ release: "20260205"
 author: Allen Downey
 date: "2026-11-19"
 
-# 37 variables: design variables, thermometers, issue items with DK/RF/INAP
+# 39 variables: design variables, thermometers, issue items with DK/RF/INAP
 # codes, and pre- and post-election vote items. The CDF has no marijuana item;
 # abortion, gay rights and the death penalty overlap with the GSS slice.
 variables:
-  design: [VCF0004, VCF0006, VCF0009z, VCF0101, VCF0104]
+  design: [VCF0004, VCF0006, VCF0009x, VCF0009y, VCF0009z, VCF0101, VCF0104]
   thermometers: [VCF0201, VCF0202, VCF0206, VCF0207, VCF0211, VCF0212, VCF0218,
                  VCF0224, VCF0230, VCF0232]
   ideology: [VCF0803, VCF0301, VCF0830, VCF0806]
@@ -21,7 +21,7 @@ variables:
 
 measure:
   identifier: [VCF0006]
-  weight: [VCF0009z]
+  weight: [VCF0009x, VCF0009y, VCF0009z]
   continuous: [VCF0004, VCF0101, VCF0201, VCF0202, VCF0206, VCF0207, VCF0211,
                VCF0212, VCF0218, VCF0224, VCF0230, VCF0232]
   ordinal: [VCF0803, VCF0830, VCF0806, VCF0301, VCF0130, VCF0847]
@@ -39,3 +39,21 @@ availability_added:
       The codebook's Sources list names the 16 years with a study weight. In these
       17 other years every respondent has the value 1.0 (checked in the
       2026-02-05 Stata file), so the weight is defined there and is uniform.
+  VCF0009x:
+    waves: [1948, 1952, 1954, 1956, 1962, 1964, 1966, 1968, 1970, 1972, 1978, 1980,
+            1982, 1984, 1986, 1988, 1990]
+    author: Claude (PublicDataToolkit Task 43)
+    date: "2026-11-19"
+    note: >
+      As for VCF0009z: in these 17 years every respondent has the value 1.0 (checked
+      in the 2026-02-05 Stata file). In 2020 every value is missing, and in 2024 the
+      web respondents' are.
+  VCF0009y:
+    waves: [1948, 1952, 1954, 1956, 1962, 1964, 1966, 1968, 1970, 1972, 1978, 1980,
+            1982, 1984, 1986, 1988, 1990]
+    author: Claude (PublicDataToolkit Task 43)
+    date: "2026-11-19"
+    note: >
+      As for VCF0009z: in these 17 years every respondent has the value 1.0 (checked
+      in the 2026-02-05 Stata file). In 2020 every value is missing, and in 2024 the
+      face-to-face respondents' are.

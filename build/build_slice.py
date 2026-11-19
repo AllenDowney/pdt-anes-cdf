@@ -278,6 +278,15 @@ def build_variable(name, spec, measure, sections, var_labels, frame):
             report.append(f"`{name}` code {code}: occurs {count} times, not in the codebook; marked unresolved")
     if n_system_missing and "." not in documented and values:
         report.append(f"`{name}`: {n_system_missing} system-missing values, but no INAP entry in the codebook")
+    elif n_system_missing and "." not in documented:
+        # No Values or Missing section at all (the VCF0009x/y weights): the codebook doesn't say why
+        # these are missing, so they're unresolved, not typed (STANDARD.md §4.2).
+        values.append({"code": ".", "label": "", "kind": "unresolved",
+                       "origin": {"origin": "data_file", "source": STATA,
+                                  "note": f"{n_system_missing} system-missing values in the data; the codebook "
+                                          "lists no missing codes for this variable."}})
+        report.append(f"`{name}`: {n_system_missing} system-missing values, no missing codes in the codebook; "
+                      "marked unresolved")
 
     if values:
         record["values"] = values
@@ -317,8 +326,9 @@ def build_variable(name, spec, measure, sections, var_labels, frame):
         fields["availability"] = {"origin": "rule", "rule": "anes_phase", "rule_version": RULE_VERSION,
                                   "source": CODEBOOK,
                                   "note": "Years from the Sources section; phase from 'This is a pre/post var' in the notes."}
-    if added:
-        fields["availability"] = {**hand, "note": "Years from the codebook's Sources section, plus "
+    if added:  # an entry may name its own author, when it isn't the slice's author
+        who = {**hand, **{k: added[k] for k in ("author", "date") if k in added}}
+        fields["availability"] = {**who, "note": "Years from the codebook's Sources section, plus "
                                                  f"{', '.join(map(str, added['waves']))} by hand: "
                                                  + " ".join(added["note"].split())}
     record["provenance"] = {"record": {"origin": "publisher", "source": CODEBOOK}, "fields": fields}

@@ -49,3 +49,11 @@ releases:
     date: "2026-02-05"
     status: current
     sources: [anes-cdf-codebook-html, anes-cdf-stata]
+    design:
+      weights: [VCF0009z, VCF0009x, VCF0009y]
+      note: >
+        The codebook's labels: VCF0009z "CDF Weight: 1970 type 0 - 2012,2016,2020,2024 full sample",
+        VCF0009x "... 2012,2016,2024 FTF sample", VCF0009y "... 2012,2016,2024 Web sample". Each refers
+        to the codebook's appendix "WEIGHTS IN THE CUMULATIVE DATA FILE" (a separate document, not in
+        sources.yaml). The CDF has no stratum or PSU variables. Not in this slice: VCF0010x-z and
+        VCF0011x-z (the weights for 1970 types 1 and 2) and VCF9999 (post-election weight).

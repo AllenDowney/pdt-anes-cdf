@@ -1,6 +1,6 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "fa5ab831a253b2b6218fe904b2a0b07d5f9d6d4c018820162459800d4b924f60",
+ "inputs_sha256": "c0714d71a5213f698b531837eed22704368050be9956a66b11f2265103aaf98f",
  "dataset": "anes-cdf",
  "files": [
   ".nojekyll",
@@ -10,6 +10,8 @@
   "style.css",
   "variables/20260205/VCF0004.html",
   "variables/20260205/VCF0006.html",
+  "variables/20260205/VCF0009x.html",
+  "variables/20260205/VCF0009y.html",
   "variables/20260205/VCF0009z.html",
   "variables/20260205/VCF0101.html",
   "variables/20260205/VCF0104.html",
