@@ -1,6 +1,6 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "4306613d6c4b79bf3756dfc8e932c0f4a0cec5493c02d3f39b67b62d51f33b28",
+ "inputs_sha256": "64a7f5f90eadacd236e537a66662935e73c4f8739580994e9b6f47a99c14c7de",
  "dataset": "anes-cdf",
  "max_tokens": 20000,
  "shards": [
@@ -27,13 +27,13 @@
      "path": "shards/table/20260205.jsonl",
      "form": "jsonl",
      "variables": 37,
-     "tokens": 16905
+     "tokens": 18447
     },
     {
      "path": "shards/table/20260205.txt",
      "form": "txt",
      "variables": 37,
-     "tokens": 2025
+     "tokens": 2018
     }
    ]
   },
@@ -64,7 +64,7 @@
      "path": "shards/scale/favor-oppose.jsonl",
      "form": "jsonl",
      "variables": 1,
-     "tokens": 546
+     "tokens": 685
     },
     {
      "path": "shards/scale/favor-oppose.txt",
@@ -101,7 +101,7 @@
      "path": "shards/scale/thermometer.jsonl",
      "form": "jsonl",
      "variables": 10,
-     "tokens": 3611
+     "tokens": 3869
     },
     {
      "path": "shards/scale/thermometer.txt",
