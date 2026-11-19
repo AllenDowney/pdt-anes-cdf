@@ -1,0 +1,66 @@
+sources:
+  - id: anes-cdf-codebook-html
+    title: ANES Time Series Cumulative Data File 1948-2024 Variable Codebook (HTML)
+    kind: codebook
+    format: html
+    path: data/raw/anes_cdf_codebook_20260205.html
+    releases: ["20260205"]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: >
+      Not recorded. The file is an R Markdown/pandoc HTML rendering dated
+      2026-02-05, the same date as the PDF codebook, so it is probably ANES's
+      own HTML codebook from https://electionstudies.org/. Copied from the
+      ExtractANES repo. Confirm the download page and record it here.
+    fetched_on: "2026-06-18"
+    sha256: 1e6172bcafcdc4c24bc3af7153ef20a4101705678c80a1667fa5487b87e8c319
+    bytes: 4103390
+  - id: anes-cdf-codebook-pdf
+    title: ANES Time Series Cumulative Data File codebook, variables (PDF)
+    kind: codebook
+    format: pdf
+    path: data/raw/anes_timeseries_cdf_codebook_var_20260205.pdf
+    releases: ["20260205"]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: >
+      Download from the Cumulative Data File page at https://electionstudies.org/
+      (no login needed). The site blocks scripted downloads, so use a browser.
+    fetched_on: "2026-02-04"
+    sha256: 0dbaa80807abac50229dbdde66055b1756eaefe9cb9f6140ffc1938c134d5123
+    bytes: 1654846
+    note: The official codebook. Not parsed; the HTML version is.
+  - id: anes-cdf-stata
+    title: ANES Time Series Cumulative Data File, Stata, February 5, 2026 version
+    kind: data
+    format: stata
+    path: data/raw/anes_timeseries_cdf_stata_20260205.dta.gz
+    releases: ["20260205"]
+    redistribution: ship
+    acquisition: manual
+    manual_steps: >
+      In a browser (the site blocks scripts; no login needed), download the Stata
+      version of the Cumulative Data File from https://electionstudies.org/ (anes_timeseries_cdf_stata_20260205.zip), unzip it,
+      and gzip the .dta to data/raw/.
+    fetched_on: "2026-02-04"
+    sha256: 3868d78da7324c64d4ac11e2d34bfb4d2f37c7babb8eed700c4bda0c538ad09d
+    bytes: 30932003
+  - id: anes-terms-pages
+    title: ANES Data Center (terms of use), FAQ, and Policy on Access to ANES Data, saved from a browser
+    kind: other
+    format: html
+    path: data/raw/terms/
+    redistribution: unknown
+    acquisition: manual
+    manual_steps: >
+      Save https://electionstudies.org/data-center/,
+      https://electionstudies.org/faq/ and
+      https://electionstudies.org/papers-documents/policy-on-access-to-anes-data/
+      from a browser (the site blocks scripts) as anes-data-center.html,
+      anes-faq.html and anes-access-policy.html in data/raw/terms/.
+    fetched_on: "2026-11-19"
+    note: >
+      Evidence for the terms in dataset.yaml. sha256: data-center
+      b5c986b2705ab5969898bfd97e371bd89e848c2d3eed83a2afbc3fea67670847, faq
+      10d86bd04f5c6e3e485c16c3b6bb7772149d79cc071b5c353711f93bd77c62ee,
+      access-policy becfda8dc498d964156e7f1f8ffd5433ad6b122dfefe3e2ac33e592774d66305.

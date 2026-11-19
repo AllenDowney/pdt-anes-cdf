@@ -1,0 +1,49 @@
+standard_version: "0.1"
+id: anes-cdf
+title: ANES Time Series Cumulative Data File
+publisher:
+  name: American National Election Studies
+  url: https://electionstudies.org/
+url: https://electionstudies.org/data-center/anes-time-series-cumulative-data-file/
+description: >
+  Questions asked in three or more ANES Time Series studies, pooled into one
+  file covering 1948 to 2024, with harmonized codes.
+citation: >
+  American National Election Studies. 2026. ANES Time Series Cumulative Data
+  File [dataset and documentation]. February 5, 2026 version.
+  www.electionstudies.org
+terms:
+  url: https://electionstudies.org/data-center/
+  summary: >
+    ANES's terms of use (Data Center page) say to use the data only for research
+    or statistical purposes, make no use of respondents' identities, and cite
+    ANES data and documentation. The FAQ says ANES public release datasets are
+    public goods and that datasets created from them may be disseminated, with a
+    link back to the original ANES dataset; restricted-use data may not. No login
+    is needed to download. The pages don't address mirroring the original files
+    or codebook, or LLM processing; Allen Downey decided both may ship. Copies of
+    the pages are source anes-terms-pages.
+  data: ship
+  documentation: ship
+  metadata: ship
+  llm_processing: allowed
+  reviewed_by: Allen Downey
+  reviewed_on: "2026-11-19"
+naming:
+  case: upper
+  note: Names are VCF plus four digits, sometimes with a lowercase suffix (VCF0006a).
+dimensions:
+  wave:
+    label: study year
+  phase:
+    label: pre- or post-election
+    note: In presidential years most studies interview before and after the election.
+  mode:
+    label: mode
+    note: Face-to-face, telephone (2000) and web (2012 on).
+releases:
+  - id: "20260205"
+    label: ANES Time Series Cumulative Data File, February 5, 2026 version
+    date: "2026-02-05"
+    status: current
+    sources: [anes-cdf-codebook-html, anes-cdf-stata]
