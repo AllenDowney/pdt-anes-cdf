@@ -5,7 +5,7 @@ release: "20260205"
 author: Allen Downey
 date: "2026-11-19"
 
-# 32 variables: design variables, thermometers, issue items with DK/RF/INAP
+# 37 variables: design variables, thermometers, issue items with DK/RF/INAP
 # codes, and pre- and post-election vote items. The CDF has no marijuana item;
 # abortion, gay rights and the death penalty overlap with the GSS slice.
 variables:
@@ -17,13 +17,14 @@ variables:
   gay_rights: [VCF0876, VCF0876a, VCF0877, VCF0877a, VCF0878]
   death_penalty: [VCF9236, VCF9237]
   vote: [VCF0702, VCF0704, VCF0704a, VCF0713]
+  religion: [VCF0128, VCF0130, VCF0846, VCF0847, VCF0850]
 
 measure:
   identifier: [VCF0006]
   weight: [VCF0009z]
   continuous: [VCF0004, VCF0101, VCF0201, VCF0202, VCF0206, VCF0207, VCF0211,
                VCF0212, VCF0218, VCF0224, VCF0230, VCF0232]
-  ordinal: [VCF0803, VCF0830, VCF0806, VCF0301]
+  ordinal: [VCF0803, VCF0830, VCF0806, VCF0301, VCF0130, VCF0847]
   categorical: [VCF0104, VCF0837, VCF0838, VCF0876, VCF0876a, VCF0877,
                 VCF0877a, VCF0878, VCF9236, VCF9237, VCF0702, VCF0704, VCF0704a,
-                VCF0713]
+                VCF0713, VCF0128, VCF0846, VCF0850]

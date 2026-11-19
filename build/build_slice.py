@@ -37,6 +37,7 @@ META = ROOT / "metadata"
 CODEBOOK = "anes-cdf-codebook-html"
 STATA = "anes-cdf-stata"
 RULE_VERSION = "0.1"
+MISSING_RULE_VERSION = "0.2"  # anes_missing_types; 0.2 adds questionnaire versions (form B, short form, ...)
 
 # ------------------------------------------------------- codebook blocks
 
@@ -161,7 +162,10 @@ def parse_codes(text):
 # why. "question not used" (the CDF's INAP) means not asked in that study.
 MISSING_PATTERNS = [
     (re.compile(r"question not used", re.I), "not_asked"),
-    (re.compile(r"\bno (pre|post)[ -]?(iw|data)\b|\bform [IVX]+\b|not administered", re.I), "not_asked"),
+    (re.compile(r"\bno (pre|post)[ -]?(iw|data)\b|not administered", re.I), "not_asked"),
+    # Version 0.2: the respondent got a questionnaire version without the item.
+    (re.compile(r"\bform [A-Z]+\b|short[- ]form|abbrev\.|spanish language|telephone IW|"
+                r"split versions: not asked|cross section \(", re.I), "not_asked"),
     (re.compile(r"\bDK\b|don'?t know", re.I), "dk"),
     (re.compile(r"\bRF\b|refused", re.I), "refused"),
     (re.compile(r"\bNA\b", re.I), "no_answer"),
@@ -256,7 +260,7 @@ def build_variable(name, spec, measure, sections, var_labels, frame):
         if token.upper() == "INAP":
             label = f"INAP. {label}"
         documented.add(code)
-        origin = {"origin": "rule", "rule": "anes_missing_types", "rule_version": RULE_VERSION,
+        origin = {"origin": "rule", "rule": "anes_missing_types", "rule_version": MISSING_RULE_VERSION,
                   "source": CODEBOOK, "location": f"{name}, Missing",
                   "note": "Listed under Missing in the codebook; types from the parts of its label."}
         if not types:
