@@ -35,6 +35,7 @@ naming:
 dimensions:
   wave:
     label: study year
+    column: VCF0004
   phase:
     label: pre- or post-election
     note: In presidential years most studies interview before and after the election.
