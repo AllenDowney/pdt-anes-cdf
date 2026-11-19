@@ -30,6 +30,15 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
+# Shared rules from the PublicDataToolkit library (STANDARD.md §6): `make build` puts it on
+# PYTHONPATH; otherwise use a checkout next to this repo, or $PDT.
+try:
+    from pdt.derived import scale_signatures
+except ImportError:
+    import os, sys
+    sys.path.insert(0, str(Path(os.environ.get("PDT", Path(__file__).resolve().parents[2] / "PublicDataToolkit")) / "lib"))
+    from pdt.derived import scale_signatures
+
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 META = ROOT / "metadata"
@@ -189,20 +198,6 @@ def missing_types(label):
 # Rule anes_phase: a note saying "This is a pre var." or "This is a post var."
 PHASE = re.compile(r"This is a (pre|post) var\b", re.I)
 
-# Rule scale_signature_from_valid_labels.
-SCALE_SIGNATURES = {
-    ("Favor", "Oppose"): "favor_oppose",
-}
-
-
-def scale_signature(record):
-    rng = record.get("valid_range", {})
-    if "degree" in rng.get("note", "").lower():
-        return "thermometer"
-    labels = tuple(v["label"] for v in record.get("values", []) if v["kind"] == "valid")
-    return SCALE_SIGNATURES.get(labels)
-
-
 # ---------------------------------------------------------------- build
 
 
@@ -352,9 +347,7 @@ def main():
             c5.extend(check_availability(record, frame))
 
     write_jsonl(META / "releases" / spec["release"] / "variables.jsonl", records)
-    signatures = [{"target": {"variable": r["name"]}, "property": "scale_signature", "value": s,
-                   "rule": "scale_signature_from_valid_labels", "rule_version": RULE_VERSION}
-                  for r in records if (s := scale_signature(r))]
+    signatures = scale_signatures(records, per_release=False)
     write_jsonl(META / "derived" / "scale_signature.jsonl", signatures)
 
     n_missing = collections.Counter(t for r in records for v in r.get("values", []) if v["kind"] == "missing"
