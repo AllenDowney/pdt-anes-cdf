@@ -37,3 +37,7 @@ make check
 ```
 
 `build/report.md` lists what the build checked against the data.
+
+## License
+
+Code here is under the MIT License. Our metadata, corrections and generated views are under CC BY 4.0. The publisher's files and documentation keep the publisher's terms (above). See [`LICENSE`](LICENSE).
