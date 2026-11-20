@@ -38,6 +38,15 @@ make check
 
 `build/report.md` lists what the build checked against the data.
 
+`scripts/extract.py` writes an extract from the common-format files (`make data` first), for example:
+
+```bash
+python scripts/extract.py --release 20260205 --vars VCF0004,VCF0806,VCF0218 --waves 2016-2024 \
+    --out anes.csv
+```
+
+`python scripts/extract.py --help` lists the releases and the options.
+
 ## License
 
 Code here is under the MIT License. Our metadata, corrections and generated views are under CC BY 4.0. The publisher's files and documentation keep the publisher's terms (above). See [`LICENSE`](LICENSE).
