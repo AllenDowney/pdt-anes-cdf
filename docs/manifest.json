@@ -1,6 +1,7 @@
 {
  "pdt_version": "0.1.0",
  "inputs_sha256": "290ca2496fddb195cf070aa48967fa96e613bf1e3b2a17effd9571b45c2fe114",
+ "generator_sha256": "9ccfde4fa108cb2b4d7e1cdf675082febafe78bc8e89a2be78db6a98e3a26059",
  "dataset": "anes-cdf",
  "files": [
   ".nojekyll",
